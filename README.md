@@ -1,233 +1,232 @@
-print('''|-------------------------------------------------------------|
-|                                                             |
-|             WELCOME TO MOBILE SALE ANALYSIS MENU            |
-|                                                             |
-|                                                             |
-|       ▂▄▄▓▄▄▂                                             |
-|     ◢◤█▀████▄▄▄▄▄▄◤                                       |
-|     ██ IP  ████▀▀▀▀▀▀╬                                      |
-|     ◥█████◤                                                |
-|     ══╩══╩══                                                |
-|                                                             |
-|                                                             |
-|                                                             |
-|                                                             |
-|-------------------------------------------------------------|
-''')
-
-import pandas as pd
+import pandas as pd 
+import numpy as np 
+import time 
+import sys 
 import matplotlib.pyplot as plt
-import numpy as np
 
-alpha=pd.read_csv(r"C:\Users\vaans\Desktop\TATA_IP.csv")
-#beta=pd.read.csv()
-#gamma=pd.read.csv()
-#delta=pd.read.csv()
-aa=pd.DataFrame(alpha)
-#bb=pd.DataFrame()
-#cc=pd.DataFrame()
-#dd=pd.DataFrame()
 
-# for ghraphs
-alpha1 = alpha.loc[1:10]
-alpha2 = alpha.loc[190:198]
+csv = pd.read_csv(r"C:\Users\vaans\Desktop\smartphone_cleaned_v5.csv")
+ds = pd.DataFrame(csv)
 
-def menu() :
-    print("[1],for tata analysis")
-    print("[2],for maruti analysis")
-    print("[3],for toyota analysis")
-    print("[4],for volkswagen analysis")
-    print("[5]exit the program")
+print('''    |-------------------------------------------------------------|
+    |                                                             |
+    |             WELCOME TO MOBILE ANALYSIS MENU                 |
+    |                                                             |
+    |                                                             |
+    |       ▂▄▄▓▄▄▂                                             |
+    |     ◢◤█▀████▄▄▄▄▄▄◤                                       |
+    |     ██ IP  ████▀▀▀▀▀▀╬                                      |
+    |     ◥█████◤                                                |
+    |     ══╩══╩══                                                |
+    |                                                             |
+    |                                                             |
+    |                                                             |
+    |                                                             |
+    |-------------------------------------------------------------|
+    ''')
+
+while True :
+
+# THE MAIN MENU 
+    print('\n [1] SHOW COMPLETE DATABASE ')
+    print('\n [2] SHOW COLUMNS or SPECIFIC COLUMNS WITH DATASET ')
+    print('\n [3] SHOW TOP ROWS ')
+    print('\n [4] SHOW BOTTOM ROWS ')
+    print('\n [5] DATA VISUALIZATION ')
+    print('\n [6] CREDITS ABOUT PROJECT')
+    print('\n [0] TO EXIT THE CODE')
     
+    
+    option = int(input('\n enter a option \n'))
+    
+    if option == 1 :
+        print(ds)
+        print('\n enter [1] to get back to the main menu')
+        print('enter [2] to exit the code \n')
+        breaker = int(input('\n >>> \n'))
+        if breaker == 1:
+            def delay_print(s):
+                for c in s:
+                    sys.stdout.write(c)
+                    sys.stdout.flush()
+                    time.sleep(0.069)
+            delay_print("Loading... back ... to... the... menu... \n \n")
 
-menu()
-option = int(input("enter your option "))
 
-while option != 0:
-    if option == 1:
-        print('''
-             
-             chose an option'''
-             
-             )
-        print('[1] SHOW COLUMNS')
-        print('[2] SHOW TOP ROWS')
-        print('[3] SHOW BOTTOM ROWS')
-        print('[4] SHOW SPECIFIC COLUMN')
-        print('[5] FOR THE GRAPH BETWEEN LOW AND HIGH (for top rows)')
-        print('[6] FOR THE GRAPH BETWEEN LAST AND CLOSE (for bottom rows)')
-        choice = int(input('enter your choice'))
-        if choice == 1:
-            print(alpha)
-        elif choice == 2:
-            print(alpha.loc[1:10])
-        elif choice == 3:
-            print(alpha.loc[190:198])
-        elif choice == 4:
-            print('''
+        elif breaker == 2: 
+            print('\n Thank You for using \n')
+            break
+        
+        
+    elif option == 2 :
+        print('  brand_name , model , price , rating , has_5g , has_nfc , has_ir_blaster , processor_brand , num_cores , processor_speed \n , battery_capacity , fast_charging_available , fast_charging , ram_capacity , internal_memory , screen_size, refresh_rate \n , resolution , num_rear_cameras , num_front_cameras , os , primary_camera_rear , primary_camera_front \n\n ')
+        
+        print('[1]  FOR SPECIFIC COLUMN')
+        print('[2]  FOR GOING BACK TO MAIN MENU')
+        print('[3]  FOR EXITING THE CODE')
+        breaker = int(input('\n >>> \n'))
+        if breaker == 1 :
+            print('[1] for brand_name')
+            print('[2] for model')
+            print('[3] for price')
+            print('[4] for rating')
+            print('[5] for processor_speed')
+            print('[6] for battery_capacity')
+            print('[7] for internal_memory')
+            print('[8] for screen_size')
+            print('[9] for primary_camera_rear')
+            print('[10] for primary_camera_front')
+            print('[0] for going back' )
+            option1 = int(input('\n ENTER YOUR CHOICE \n'))
             
-            chose an option
-            
-            ''')
-            print('[1] FOR COLUMN DATE')
-            print('[2] FOR COLUMN OPEN')
-            print('[3] FOR COLUMN HIGH')
-            print('[4] FOR COLUMN LOW') 
-            print('[5] FOR COLUMN LAST') 
-            print('[6] FOR COLUMN CLOSE') 
-            qq = int(input('''enter your option 
-                           
-                           '''))
-            if qq == 1:
-                print(alpha.loc[:,'Date'])
-            elif qq == 2:
-                print(alpha.loc[:,'Open'])
-            elif qq == 3:
-                print(alpha.loc[:,'High'])
-            elif qq == 4:
-                print(alpha.loc[:,'Low'])
-            elif 11 == 5:
-                print(alpha.loc[:,'Last'])
-            elif qq == 6:
-                print(alpha.loc[:,'Close'])
+            if option1 ==1 :
+                print(ds.loc[:,'brand_name'])
+            elif option1 == 2:
+                print(ds.loc[:,'model'])
+            elif option1 == 3:
+                print(ds.loc[:,'price'])
+            elif option1 == 4:
+                print(ds.loc[:,'rating'])
+            elif option1 == 5:
+                print(ds.loc[:,'processor_speed'])
+            elif option1 == 6:
+                print(ds.loc[:,'battery_capacity'])
+            elif option1 == 7:
+                print(ds.loc[:,'internal_memory'])
+            elif option1 == 8:
+                print(ds.loc[:,'screen_size'])
+            elif option1 == 9:
+                print(ds.loc[:,'primary_camera_rear'])
+            elif option1 == 10:
+                print(ds.loc[:,'primary_camera_front'])
+            elif option1 == 0:
+                    break
             else :
-                print(" invalid ")
-        elif choice == 5:
-            a1 = alpha1.High
-            b1 = alpha1.Low
-            plt.plot(b1,a1,)
-            plt.show()
-        elif choice == 6:
-            a11 = alpha2.Last
-            b11 = alpha2.Close
-            plt.plot(a11,b11,)
-            plt.show()
-#alpha over
+                print('\n invalid \n')
+                  
+        elif breaker == 2:
+            def delay_print(s):
+                for c in s:
+                    sys.stdout.write(c)
+                    sys.stdout.flush()
+                    time.sleep(0.069)
+            delay_print("Loading... back ... to... the... menu... \n \n")
+                  
+                  
+        elif breaker == 3: 
+            print('\n Thank You for using \n')
+            break
+                  
+        else :
+            print('invalid option')
+            break 
+                  
 
-    elif option == 2:
-        print('''
-             
-             chose an option'''
-             
-             )
-        print('[1] SHOW COLUMNS')
-        print('[2] SHOW TOP ROWS')
-        print('[3] SHOW BOTTOM ROWS')
-        print('[4] SHOW SPECIFIC COLUMN')
-        print('[5] COMPLETE DATASET')
-        choice = int(input('enter your choice'))
-        if choice == 1:
-            print(alpha)
-        elif choice == 2:
-            print(alpha.loc[1:10])
-        elif choice == 3:
-            print(alpha.loc[190:198])
-        elif choice == 4:
-            print('''
-            
-            chose an option
-            
-            ''')
-            print('[1] FOR COLUMN DATE')
-            print('[2] FOR COLUMN OPEN')
-            print('[3] FOR COLUMN HIGH')
-            print('[4] FOR COLUMN LOW') 
-            print('[5] FOR COLUMN LAST') 
-            print('[6] FOR COLUMN CLOSE') 
-            qq = int(input('''enter your option 
-                           
-                           '''))
-            if qq == 1:
-                print(alpha.loc[:,'Date'])
-            elif qq == 2:
-                print(alpha.loc[:,'Open'])
-            elif qq == 3:
-                print(alpha.loc[:,'High'])
-            elif qq == 4:
-                print(alpha.loc[:,'Low'])
-            elif 11 == 5:
-                print(alpha.loc[:,'Last'])
-            elif qq == 6:
-                print(alpha.loc[:,'Close'])
-            else :
-                print(" invalid ")
-        elif choice == 5:
-            print(alpha)
     elif option == 3:
-        print('''chose an option
+        print('enter a no. above 1 for the output to be defined ')
+        print('the output will show you the rows from the no. you entered till 1 ')
+        pogba = int(input('\n >>> \n'))
+        if pogba == 1:
+            print('invalid text')
+            break
+        else :
+            
+            print(ds[['brand_name', 'model', 'rating', 'processor_speed', 'battery_capacity', 'internal_memory']].head(pogba))
+            print('\nenter [1] to get back to the main menu')
+            print('enter [2] to exit the code \n')
+            breaker = int(input('\n >>> \n'))
+            if breaker == 1:
+                def delay_print(s):
+                    for c in s:
+                        sys.stdout.write(c)
+                        sys.stdout.flush()
+                        time.sleep(0.069)
+                delay_print("Loading... back ... to... the... menu... \n \n")
+
+
+            elif breaker == 2: 
+                print('\n Thank You for using \n')
+                break
         
-        ''')
-        print('[1] SHOW COLUMNS')
-        print('[2] SHOW TOP ROWS')
-        print('[3] SHOW BOTTOM ROWS')
-        print('[4] SHOW SPECIFIC COLUMN')
-        print('[5] ADD A NEW RECORD')
-        print('[6] DELETE A RECORD')
-        print('[7] COMPLETE DATASET')
-        choice = int(input('enter your choice'))
-        if choice == 1:
-            #csv file nhi hai
-            print('111')
-        elif choice == 2:
-            #csv file nhi hai
-            print('222')
-        elif choice == 3:
-            #csv file nhi hai
-            print('333')
-        elif choice == 4:
-            #csv file nhi hai
-            print('444')
-        elif choice == 5:
-            # csv file nhi hai
-            print('555')
-        elif choice == 6:
-            # csv file nhi hai
-            print('666')
-        elif choice == 7:
-            #csv file nhi hai
-            print('777')
     elif option == 4:
-        print('''chose an option
+        print('enter a no. below 200 for the output to be defined ')
+        print('the output will show you the no. of rows from the last ')
+        pogba = int(input('\n >>> \n'))
+        if pogba >= 200:
+            print('invalid text')
+            break
+        else :
+            print(ds[['brand_name', 'model', 'rating', 'processor_speed', 'battery_capacity', 'internal_memory']].tail(pogba))
+            print('\nenter [1] to get back to the main menu')
+            print('enter [2] to exit the code \n')
+            breaker = int(input('\n >>> \n'))
+            if breaker == 1:
+                def delay_print(s):
+                    for c in s:
+                        sys.stdout.write(c)
+                        sys.stdout.flush()
+                        time.sleep(0.069)
+                delay_print("Loading... back ... to... the... menu... \n \n")
+
+
+            elif breaker == 2: 
+                print('\n Thank You for using \n')
+                break
         
-        ''')
-        print('[1] SHOW COLUMNS')
-        print('[2] SHOW TOP ROWS')
-        print('[3] SHOW BOTTOM ROWS')
-        print('[4] SHOW SPECIFIC COLUMN')
-        print('[5] ADD A NEW RECORD')
-        print('[6] DELETE A RECORD')
-        print('[7] COMPLETE DATASET')
-        choice = int(input('enter your choice'))
-        if choice == 1:
-            #csv file nhi hai
-            print('1111')
-        elif choice == 2:
-            #csv file nhi hai
-            print('2222')
-        elif choice == 3:
-            #csv file nhi hai
-            print('3333')
-        elif choice == 4:
-            #csv file nhi hai
-            print('4444')
-        elif choice == 5:
-            # csv file nhi hai
-            print('5555')
-        elif choice == 6:
-            # csv file nhi hai
-            print('6666')
-        elif choice == 7:
-            #csv file nhi hai
-            print('7777')
-    else :
+    elif option == 5:
         print('''
-              
-              invalid option
-              
-              ''')
-
-    print()
-    menu()
-    option = int(input("enter your option "))
-
-print("thanks for using this program")
+        |--------------------------------------------|
+        |                                            |  
+        |        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄           |                         
+        |        █ 11:11     □    100◢◤ █           |      
+        |        █                       █           |      
+        |        █                       █           |
+        |        █                       █           |      
+        |        █                       █           |
+        |        █                       █           |      
+        |        █                       █           |
+        |        █                       █           |     
+        |        █                       █           |
+        |        █         DATA          █           |      
+        |        █     VISUALIZATION     █           |     
+        |        █         MENU          █           |      
+        |        █                       █           |     
+        |        █                       █           |
+        |        █                       █           | 
+        |        █                       █           |
+        |        █                       █           |      
+        |        █                       █           |      
+        |        █                       █           |     
+        |        █                       █           |     
+        |        █    ◀     ███     ⬤   █           |     
+        |        █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█           |  
+        |                                            |  
+        |--------------------------------------------|
+        ''')
+        
+        print('BAR GRAPH OF brand_name with respect to rating \n')
+        print('')
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    elif option == 6:
+        print('''\n
+        project made by ~~ UTKARSH SHARMA AND PRANAV SHARMA 
+        class ~~ 12 alpha 
+        project about ~~ mobile analysis through ghraphs and database \n
+        ''')
+        
+        
+        
+    elif option == 0:
+        print('THANKS FOR USING OUR PROGRAM')
+        time.sleep(0.5)
+        print('🙏')
+        break 
+        
