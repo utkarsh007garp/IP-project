@@ -16,7 +16,7 @@ delay_print('''    |------------------------------------------------------------
     |                                                             |
     |***********|WELCOME TO MOBILE SALES ANALYSIS MENU|***********|
     |=============================================================|                                                            
-    |         Created by: Utkarsh SharmaPranav | Sharma           |
+    |         Created by: Utkarsh Sharma | Pranav Sharma          |
     |                                                             |
     |                                                             |
     |                       ▂▄▄▓▄▄▂                             |
